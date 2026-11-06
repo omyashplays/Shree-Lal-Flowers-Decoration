@@ -282,13 +282,13 @@ p {
    Mobile Nav Sliding Drawer & Backdrop
    ============================================ */
 
-/* Backdrop overlay - crisp dim shade without any blur */
+/* Backdrop overlay - bright frosted blur, keeps full natural light of the page (NOT dim) */
 .nav-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: rgba(255, 255, 255, 0.15); /* Bright transparent layer, does not darken the light */
+  backdrop-filter: blur(8px); /* Blurs the background page */
+  -webkit-backdrop-filter: blur(8px);
   z-index: 1900;
   opacity: 0;
   visibility: hidden;
@@ -302,22 +302,31 @@ p {
   pointer-events: auto;
 }
 
-/* Mobile Nav Drawer - Solid warm white sliding from right */
+/* Also smoothly blur background page contents when menu is open while keeping full light */
+body.nav-open > main,
+body.nav-open > footer,
+body.nav-open > .hero,
+body.nav-open > .page-hero {
+  filter: blur(6px);
+  transition: filter 0.3s ease;
+}
+
+/* Mobile Nav Drawer - Solid white sliding popup from right */
 .nav {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 300px;
-  max-width: 84vw;
+  width: 310px;
+  max-width: 85vw;
   height: 100vh;
   height: 100dvh;
   background: #FFFFFF; /* Pure solid opaque white */
   z-index: 2000;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  box-shadow: -8px 0 35px rgba(0, 0, 0, 0.18);
   transform: translateX(100%); /* Hidden off the right edge */
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
   visibility: hidden;
@@ -451,46 +460,78 @@ p {
   border-left-color: var(--color-marigold);
 }
 
-/* Drawer Footer */
+/* Drawer Footer - Contact section with WhatsApp & Call */
 .nav__drawer-footer {
-  padding: 16px 14px 22px;
+  margin-top: auto;
+  padding: 16px 14px 20px;
+  background: #FAFAF7;
   border-top: 1px solid rgba(139, 44, 23, 0.1);
-  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.nav__drawer-btn {
+.nav__drawer-contact-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #7A695C;
+  text-align: center;
+}
+
+.nav__drawer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-drawer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: 100%;
+  gap: 6px;
   min-height: 44px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  padding: 10px 14px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
   border-radius: var(--radius-md);
   text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.nav__drawer-social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #6C584C;
+.btn-drawer:hover,
+.btn-drawer:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.btn-drawer--call {
+  background: var(--color-marigold);
+  color: #FFFFFF !important;
+}
+
+.btn-drawer--whatsapp {
+  background: #25D366;
+  color: #FFFFFF !important;
+}
+
+.btn-drawer svg {
+  flex-shrink: 0;
+}
+
+.nav__drawer-phone-text {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #5C4A3E;
+  margin-top: 2px;
+}
+
+.nav__drawer-phone-text a {
+  color: inherit;
+  font-weight: 700;
   text-decoration: none;
-  padding: 6px;
-  transition: color 0.2s ease;
-}
-
-.nav__drawer-social:hover {
-  color: var(--color-marigold);
 }
 
 /* Desktop nav (768px+) */
@@ -501,6 +542,13 @@ p {
 
   .nav-backdrop {
     display: none !important;
+  }
+
+  body.nav-open > main,
+  body.nav-open > footer,
+  body.nav-open > .hero,
+  body.nav-open > .page-hero {
+    filter: none !important;
   }
 
   .nav__drawer-header,
