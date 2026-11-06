@@ -508,20 +508,20 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-height: 46px;
-  padding: 10px 12px;
-  font-size: 0.92rem;
+  gap: 8px;
+  min-height: 48px;
+  padding: 11px 16px;
+  font-size: 0.94rem;
   font-weight: 700;
-  border-radius: var(--radius-md);
+  border-radius: 9999px !important; /* Perfect pill shape */
   text-decoration: none;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   -webkit-tap-highlight-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .btn-drawer:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
 }
 
 .btn-drawer:active {
@@ -529,21 +529,23 @@ p {
 }
 
 .btn-drawer--call {
-  background: var(--color-marigold);
+  background: linear-gradient(135deg, #FF9900 0%, #E65100 100%) !important;
   color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
 }
 
 .btn-drawer--call:hover {
-  background: var(--color-marigold-dark);
+  box-shadow: 0 6px 18px rgba(230, 81, 0, 0.45) !important;
 }
 
 .btn-drawer--whatsapp {
-  background: #25D366;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
   color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
 }
 
 .btn-drawer--whatsapp:hover {
-  background: #20BA5A;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45) !important;
 }
 
 .btn-drawer svg {
@@ -710,100 +712,138 @@ p {
   }
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- Buttons Base ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 14px 32px;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 1rem;
-  min-height: 48px;
+  border-radius: 9999px !important; /* Perfect modern pill shape - NEVER square box */
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.3px;
+  min-height: 52px;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
   border: none;
   text-align: center;
   line-height: 1.2;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(1px) scale(0.98);
 }
 
 .btn svg,
 .btn img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
 }
 
-.btn-primary,
-.btn--primary {
-  background: var(--color-marigold);
-  color: var(--color-white);
-}
-
-.btn-primary:hover,
-.btn--primary:hover {
-  background: var(--color-marigold-dark);
-  color: var(--color-white);
-}
-
-.btn-secondary,
-.btn--secondary {
-  background: var(--color-marigold-light);
-  color: var(--color-marigold-dark);
-  border: 1.5px solid var(--color-marigold);
-}
-
-.btn-secondary:hover,
-.btn--secondary:hover {
-  background: var(--color-marigold);
-  color: var(--color-white);
-}
-
+/* Premium WhatsApp Pill Button (Up page & Down page) */
 .btn-whatsapp,
 .btn--whatsapp {
-  background: #25D366;
-  color: var(--color-white);
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
 }
 
 .btn-whatsapp:hover,
 .btn--whatsapp:hover {
-  background: #1da851;
-  color: var(--color-white);
+  background: linear-gradient(135deg, #2BE873 0%, #17A36F 100%) !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.52), inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
+  color: #FFFFFF !important;
 }
 
+.btn-whatsapp:active,
+.btn--whatsapp:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 3px 12px rgba(37, 211, 102, 0.35) !important;
+}
+
+/* Premium Call Pill Button (Up page & Down page) */
 .btn-call,
 .btn--call {
-  background: var(--color-marigold);
-  color: var(--color-white);
+  background: linear-gradient(135deg, #FF9900 0%, #E65100 100%) !important;
+  color: #FFFFFF !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
 }
 
 .btn-call:hover,
 .btn--call:hover {
-  background: var(--color-marigold-dark);
+  background: linear-gradient(135deg, #FFA726 0%, #EF6C00 100%) !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(230, 81, 0, 0.52), inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-call:active,
+.btn--call:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 3px 12px rgba(230, 81, 0, 0.35) !important;
+}
+
+.btn-primary,
+.btn--primary {
+  background: linear-gradient(135deg, var(--color-marigold) 0%, #B84A2C 100%);
   color: var(--color-white);
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 16px rgba(224, 122, 95, 0.35);
+}
+
+.btn-primary:hover,
+.btn--primary:hover {
+  background: linear-gradient(135deg, #F08A6E 0%, var(--color-marigold) 100%);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(224, 122, 95, 0.45);
+}
+
+.btn-secondary,
+.btn--secondary {
+  background: var(--color-white);
+  color: var(--color-marigold-dark);
+  border: 1.8px solid var(--color-marigold);
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary:hover,
+.btn--secondary:hover {
+  background: var(--color-marigold-light);
+  color: var(--color-marigold-dark);
+  transform: translateY(-2px);
 }
 
 .btn-outline,
 .btn--outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid var(--color-marigold);
   color: var(--color-marigold);
+  border-radius: 9999px !important;
 }
 
-.btn-outline:hover,
 .btn--outline:hover {
   background: var(--color-marigold);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 /* ---------- Hero Section ---------- */
@@ -1440,37 +1480,51 @@ body.nav-open .floating-buttons,
 }
 
 .floating-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
+  width: 58px;
+  height: 58px;
+  border-radius: 50% !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition), box-shadow var(--transition);
-  border: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .floating-btn:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-lg);
+  transform: scale(1.12);
+}
+
+.floating-btn:active {
+  transform: scale(0.95);
 }
 
 .floating-btn svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
 }
 
 .floating-btn--whatsapp {
-  background: #25D366;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
   color: var(--color-white);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
   animation: pulse 2.5s ease-in-out infinite;
 }
 
+.floating-btn--whatsapp:hover {
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6) !important;
+}
+
 .floating-btn--call {
-  background: var(--color-marigold);
+  background: linear-gradient(135deg, #FF9900 0%, #E65100 100%) !important;
   color: var(--color-white);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
+}
+
+.floating-btn--call:hover {
+  box-shadow: 0 10px 28px rgba(230, 81, 0, 0.6) !important;
 }
 
 @media (min-width: 768px) {
@@ -2038,17 +2092,32 @@ body.nav-open .floating-buttons,
   color: var(--color-text-medium);
 }
 
-.cta__buttons {
+.cta__buttons,
+.cta-section__buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.cta__buttons .btn,
+.cta-section__buttons .btn {
+  width: 100%;
+  max-width: 320px;
 }
 
 @media (min-width: 600px) {
-  .cta__buttons {
+  .cta__buttons,
+  .cta-section__buttons {
     flex-direction: row;
+    gap: 16px;
+  }
+  .cta__buttons .btn,
+  .cta-section__buttons .btn {
+    width: auto;
+    min-width: 230px;
   }
 }
 
@@ -2229,11 +2298,13 @@ body.nav-open .floating-buttons,
     gap: 12px;
   }
 
-  .hero__buttons .btn {
+  .hero__buttons .btn,
+  .cta__buttons .btn,
+  .cta-section__buttons .btn {
     width: 100%;
     max-width: 320px;
-    min-height: 50px;
-    font-size: 1rem;
+    min-height: 52px;
+    border-radius: 9999px !important;
   }
 
   /* Sections & cards on phone */
