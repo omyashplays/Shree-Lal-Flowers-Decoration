@@ -20,7 +20,7 @@ const CONFIG = {
 };
 
 /* ============================================
-   1. Mobile Navigation Sliding Drawer Toggle
+   1. Mobile Navigation Toggle
    ============================================ */
 function initMobileNav() {
   const hamburger = document.querySelector(".hamburger");
@@ -28,64 +28,34 @@ function initMobileNav() {
 
   if (!hamburger || !nav) return;
 
-  // Create or retrieve backdrop element
-  let backdrop = document.querySelector(".nav-backdrop");
-  if (!backdrop) {
-    backdrop = document.createElement("div");
-    backdrop.className = "nav-backdrop";
-    backdrop.id = "nav-backdrop";
-    document.body.appendChild(backdrop);
-  }
-
-  const floatingBtns = document.querySelector(".floating-buttons");
-
-  function openDrawer() {
-    nav.classList.add("is-open");
-    backdrop.classList.add("is-open");
-    hamburger.setAttribute("aria-expanded", "true");
-    document.body.classList.add("no-scroll");
-    document.body.classList.add("nav-open");
-    if (floatingBtns) floatingBtns.style.display = "none";
-  }
-
-  function closeDrawer() {
-    nav.classList.remove("is-open");
-    backdrop.classList.remove("is-open");
-    hamburger.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("no-scroll");
-    document.body.classList.remove("nav-open");
-    if (floatingBtns) floatingBtns.style.display = "";
-  }
-
-  // Hamburger toggle
   hamburger.addEventListener("click", () => {
-    if (nav.classList.contains("is-open")) {
-      closeDrawer();
-    } else {
-      openDrawer();
-    }
+    const isOpen = nav.classList.toggle("is-open");
+    hamburger.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("no-scroll", isOpen);
   });
-
-  // Drawer internal close button
-  const closeBtn = nav.querySelector(".nav__close, #nav-close");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeDrawer);
-  }
-
-  // Backdrop click closes drawer
-  backdrop.addEventListener("click", closeDrawer);
 
   // Close when any nav link is clicked
   nav.querySelectorAll(".nav__link").forEach((link) => {
-    link.addEventListener("click", closeDrawer);
+    link.addEventListener("click", () => closeNav(hamburger, nav));
+  });
+
+  // Close when clicking outside on the backdrop
+  nav.addEventListener("click", (e) => {
+    if (e.target === nav) closeNav(hamburger, nav);
   });
 
   // Close on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav.classList.contains("is-open")) {
-      closeDrawer();
+      closeNav(hamburger, nav);
     }
   });
+}
+
+function closeNav(hamburger, nav) {
+  nav.classList.remove("is-open");
+  hamburger.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("no-scroll");
 }
 
 /* ============================================
