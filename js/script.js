@@ -13,7 +13,8 @@ const CONFIG = {
   whatsapp: "+918084545751",            // <-- Shop WhatsApp number
   address: "Piska Nagari, Ranchi, Jharkhand, 835303",
   instagram: "https://www.instagram.com/shri_lal_flower_and_events?utm_source=qr&exln=Y2pkejE2NzMzNzJj",
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.1!2d85.3096!3d23.3441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPiska+Nagari+Ranchi!5e0!3m2!1sen!2sin!4v1234567890",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.829!2d85.2003891!3d23.333264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4df5c6772c095%3A0xb996eedc676a176c!2sShree%20Lal%20Flowers%20And%20Dacoration!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+  mapDirectUrl: "https://www.google.com/maps/place/Shree+Lal+Flowers+And+Dacoration/@23.3332591,85.202964,17z/data=!4m6!3m5!1s0x39f4df5c6772c095:0xb996eedc676a176c!8m2!3d23.3332591!4d85.202964!16s%2Fg%2F11xfhys09z",
   defaultWhatsAppMessage:
     "Hello Shree Lal Flowers, I want to ask about flower decoration services in Ranchi. / नमस्ते, मुझे फूल सजावट के बारे में जानकारी चाहिए।",
 };

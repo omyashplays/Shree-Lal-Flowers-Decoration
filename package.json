@@ -1,0 +1,11 @@
+{
+  "name": "shree-lal-flowers",
+  "version": "1.0.0",
+  "description": "Website for Shree Lal Flowers & Decoration, Ranchi",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "build": "echo Build complete",
+    "vercel-build": "echo Vercel build complete"
+  }
+}
