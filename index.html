@@ -78,8 +78,8 @@
             <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
                 <ul class="nav__list">
                     <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+                    <li><a href="#gallery" class="nav__link">Gallery</a></li>
                     <li><a href="services.html" class="nav__link">Services</a></li>
-                    <li><a href="gallery.html" class="nav__link">Gallery</a></li>
                     <li><a href="about.html" class="nav__link">About & Contact</a></li>
                 </ul>
             </nav>
@@ -156,56 +156,154 @@
             </div>
         </section>
 
-        <!-- ===================== SERVICES PREVIEW SECTION ===================== -->
-        <section class="services-preview section" aria-labelledby="services-heading">
+        <!-- ===================== GALLERY SECTION (REPLACES SERVICES ON HOME) ===================== -->
+        <section class="gallery-section section" id="gallery" aria-labelledby="gallery-heading">
             <div class="container">
-                <div class="section__header animate-on-scroll">
-                    <h2 id="services-heading" class="section__title">Our Services</h2>
+                <div class="section__header animate-on-scroll" style="text-align: center; margin-bottom: 24px;">
+                    <h2 id="gallery-heading" class="section__title">Our Work & Gallery / हमारा काम</h2>
                     <div class="decorative-divider" aria-hidden="true">
                         <span>✿</span>
                     </div>
-                    <a href="services.html" class="section__view-all">View All Services →</a>
+                    <p style="color: var(--color-text-medium); margin: 12px auto 0; max-width: 650px; font-size: 1.05rem;">
+                        Real flower decoration photos from our recent weddings, car celebrations, homes, and events in Ranchi.
+                    </p>
                 </div>
-                <div class="services-preview__grid">
-                    <!-- Service Card 1: Car Decoration -->
-                    <a href="services.html" class="service-card animate-on-scroll">
-                        <div class="service-card__image">
-                            <img src="images/service-car.jpg" alt="Wedding car decorated with fresh flowers including roses and marigolds in Ranchi" loading="lazy" width="400" height="300">
+
+                <!-- Filter Buttons -->
+                <div class="gallery-filters animate-on-scroll">
+                    <button class="filter-btn filter-btn--active" data-filter="all">All / सभी</button>
+                    <button class="filter-btn" data-filter="car">Car / गाड़ी</button>
+                    <button class="filter-btn" data-filter="home">Home / घर</button>
+                    <button class="filter-btn" data-filter="event">Event / इवेंट</button>
+                    <button class="filter-btn" data-filter="mala">Mala & Guldasta</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid animate-on-scroll">
+                    <!-- ===== CAR DECORATION ===== -->
+                    <div class="gallery-item" data-category="car">
+                        <img src="images/gallery/car-1.jpg" alt="Wedding car decorated with marigold flowers in Ranchi" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
                         </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Car Decoration / गाड़ी सजावट</h3>
-                            <p class="service-card__desc">Beautiful flower decoration for wedding cars and special occasion vehicles with fresh roses, marigolds, and more.</p>
+                    </div>
+
+                    <div class="gallery-item" data-category="car">
+                        <img src="images/gallery/car-2.jpg" alt="New car flower decoration for delivery celebration" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
                         </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="car">
+                        <img src="images/gallery/car-3.jpg" alt="Bridal car with rose and jasmine flower decoration" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="car">
+                        <img src="images/gallery/car-4.jpg" alt="Car bonnet decorated with fresh flowers" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- ===== HOME DECORATION ===== -->
+                    <div class="gallery-item" data-category="home">
+                        <img src="images/gallery/home-1.jpg" alt="Home entrance decorated with flowers for housewarming" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="home">
+                        <img src="images/gallery/home-2.jpg" alt="Living room flower decoration for birthday party" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="home">
+                        <img src="images/gallery/home-3.jpg" alt="Puja room decorated with marigold garlands" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="home">
+                        <img src="images/gallery/home-4.jpg" alt="Festival flower decoration at home in Ranchi" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- ===== EVENT & WEDDING ===== -->
+                    <div class="gallery-item" data-category="event">
+                        <img src="images/gallery/event-1.jpg" alt="Wedding stage decorated with roses and marigolds" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <img src="images/gallery/event-2.jpg" alt="Mandap decoration with fresh flowers for wedding" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <img src="images/gallery/event-3.jpg" alt="Event entrance gate with flower decoration" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <img src="images/gallery/event-4.jpg" alt="Reception table decorated with flower arrangements" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- ===== MALA & GULDASTA ===== -->
+                    <div class="gallery-item" data-category="mala">
+                        <img src="images/gallery/mala-1.jpg" alt="Fresh rose garland mala for wedding" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="mala">
+                        <img src="images/gallery/mala-2.jpg" alt="Marigold garland for puja ceremony" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="mala">
+                        <img src="images/gallery/mala-3.jpg" alt="Mixed flower bouquet guldasta" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="mala">
+                        <img src="images/gallery/mala-4.jpg" alt="Jasmine and rose bouquet for gift" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <svg class="gallery-item__icon" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation Links -->
+                <div class="gallery-cta-footer animate-on-scroll" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 40px;">
+                    <a href="gallery.html" class="btn btn--secondary">
+                        <span>View Full Gallery / पूरी गैलरी देखें →</span>
                     </a>
-                    <!-- Service Card 2: Home Decoration -->
-                    <a href="services.html" class="service-card animate-on-scroll">
-                        <div class="service-card__image">
-                            <img src="images/service-home.jpg" alt="Home entrance decorated with fresh flower garlands and rangoli for festival in Ranchi" loading="lazy" width="400" height="300">
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Home Decoration / घर सजावट</h3>
-                            <p class="service-card__desc">Make your home festive-ready with fresh flower arrangements for pujas, housewarming, and celebrations.</p>
-                        </div>
-                    </a>
-                    <!-- Service Card 3: Event & Wedding -->
-                    <a href="services.html" class="service-card animate-on-scroll">
-                        <div class="service-card__image">
-                            <img src="images/service-event.jpg" alt="Wedding mandap and stage beautifully decorated with fresh flowers in Ranchi" loading="lazy" width="400" height="300">
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Event & Wedding / शादी सजावट</h3>
-                            <p class="service-card__desc">Complete mandap, stage, and venue decoration for weddings, engagements, and all special events.</p>
-                        </div>
-                    </a>
-                    <!-- Service Card 4: Mala & Guldasta -->
-                    <a href="services.html" class="service-card animate-on-scroll">
-                        <div class="service-card__image">
-                            <img src="images/service-mala.jpg" alt="Fresh flower mala garlands and guldasta bouquets handmade in Ranchi" loading="lazy" width="400" height="300">
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Mala & Guldasta / माला और गुलदस्ता</h3>
-                            <p class="service-card__desc">Fresh flower garlands (mala) and bouquets (guldasta) for welcomes, pujas, birthdays, and gifting.</p>
-                        </div>
+                    <a href="services.html" class="btn btn--outline">
+                        <span>See All Services & Pricing / हमारी सेवाएं →</span>
                     </a>
                 </div>
             </div>
@@ -229,6 +327,20 @@
             </div>
         </section>
 
+        <!-- ========== LIGHTBOX ========== -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer" aria-hidden="true">
+            <button class="lightbox__close" aria-label="Close image viewer">&times;</button>
+            <button class="lightbox__prev" aria-label="Previous image">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <div class="lightbox__content">
+                <img src="" alt="" class="lightbox__img" id="lightbox-img">
+            </div>
+            <button class="lightbox__next" aria-label="Next image">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </div>
+
     </main>
 
     <!-- ===================== FOOTER ===================== -->
@@ -242,8 +354,8 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About & Contact</a></li>
                 </ul>
             </div>

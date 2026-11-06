@@ -765,6 +765,7 @@ p {
   background: rgba(45, 32, 25, 0.3);
 }
 
+.gallery-item__overlay,
 .gallery-item__zoom {
   position: absolute;
   top: 50%;
@@ -783,12 +784,15 @@ p {
   pointer-events: none;
 }
 
+.gallery-item__overlay svg,
+.gallery-item__overlay .gallery-item__icon,
 .gallery-item__zoom svg {
   width: 20px;
   height: 20px;
   color: var(--color-text-dark);
 }
 
+.gallery-item:hover .gallery-item__overlay,
 .gallery-item:hover .gallery-item__zoom {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
